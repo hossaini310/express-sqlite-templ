@@ -1,4 +1,5 @@
 -- here you can create your database tables and insert some data
+DROP TABLE IF EXISTS movies;
 
 CREATE TABLE IF NOT EXISTS movies (
     id INTEGER PRIMARY KEY,
