@@ -1,4 +1,4 @@
-import * as model from '../models/movies.js';
+import * as model from '../models/movies.model.js';
 
 const getMovies = async (req, res) => {
   const rows = await model.dbGetMovies();
