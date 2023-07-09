@@ -1,11 +1,10 @@
-import validator from 'is-my-json-valid';
+import Joi from 'joi';
 
-const UserValidate = validator({
-  required: true,
-  type: 'object',
-  properties: {
-    title: { required: true, type: 'string' },
-  },
+const UserValidationSchema = Joi.object({
+  username: Joi.string().alphanum().min(3).max(30).required(),
+  password: Joi.string()
+    .pattern(/^[a-zA-Z0-9]{3,30}$/)
+    .required(),
 });
 
-export default UserValidate;
+export default UserValidationSchema;
